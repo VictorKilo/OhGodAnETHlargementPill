@@ -1,5 +1,5 @@
 [Unit]
-Description=Patch NVIDIA GDDR5 memory timings
+Description=Patch NVIDIA GDDR5X memory timings
 DefaultDependencies=no
 After=sysinit.target local-fs.target
 Before=basic.target
