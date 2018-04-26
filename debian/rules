@@ -3,7 +3,7 @@
 DESTDIR     := $(CURDIR)/debian/ohgodethlargementpill
 BINARY_NAME := $(shell find "$(CURDIR)" -maxdepth 1 -type f -iname 'ohgodaneth*' ! -iname '*.exe')
 
-GIT_COMMIT  := $(shell git log -1 --pretty=format:%h)
+GIT_COMMIT  := $(shell git log master -1 --pretty=format:%h)
 GIT_DATE    := $(shell date '+%Y%m%d')
 PKG_VERSION := 0.0+git$(GIT_DATE).$(GIT_COMMIT)
 
