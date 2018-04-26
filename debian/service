@@ -1,0 +1,22 @@
+[Unit]
+Description=Patch NVIDIA GDDR5 memory timings
+DefaultDependencies=no
+After=sysinit.target local-fs.target
+Before=basic.target
+ 
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/ohgodethlargementpill
+ExecStartPre=/usr/sbin/check-io-strict-devmem
+ExecStart=/usr/sbin/ohgodethlargementpill $ARGS
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ohgodethlargementpill
+SyslogLevel=info
+Restart=always
+RestartSec=30
+StartLimitInterval=300
+StartLimitBurst=3
+ 
+[Install]
+WantedBy=basic.target

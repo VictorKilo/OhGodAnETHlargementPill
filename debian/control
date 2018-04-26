@@ -1,0 +1,18 @@
+Source: ohgodethlargementpill
+Section: admin
+Priority: optional
+Maintainer: Adam Cecile <acecile@le-vert.net>
+Build-Depends: debhelper (>= 9), debhelper (>= 9.20160709) | dh-systemd, git
+Standards-Version: 4.1.2
+Homepage: https://github.com/OhGodACompany/OhGodAnETHlargementPill
+
+Package: ohgodethlargementpill
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Patch NVIDIA GDDR5X memory timing to improve ETH mining
+ This (closed source) software hot patch memory timings of NVIDIA cards
+ using GDDR5X (1080, 1080Ti, Titan XP, P102, P104) and thus give an
+ Ethereum mining boost around +50%.
+ .
+ It may create instabillity or break other usage, so I would not recommend
+ using this on a non-dedicated to Ethereum mining machine.

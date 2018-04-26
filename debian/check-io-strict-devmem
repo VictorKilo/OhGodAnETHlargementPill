@@ -1,0 +1,19 @@
+#!/bin/sh
+
+current_kernel_config="/boot/config-`uname -r`"
+
+if `grep -q '^CONFIG_IO_STRICT_DEVMEM=y' "${current_kernel_config}"` ; then
+  if  `grep -q 'iomem=relaxed' /proc/cmdline`; then
+    exit 0
+  else
+    echo "Running kernel has been built with CONFIG_IO_STRICT_DEVMEM=y"
+    echo "You need to boot with kernel argument iomem=relaxed otherwise"
+    echo "this application cannot work"
+    echo
+    echo "Add iomem=relaxed to GRUB_CMDLINE_LINUX_DEFAULT in /etc/default/grub"
+    echo Then run update-grub, then reboot
+    exit 1
+  fi
+fi
+
+exit 0

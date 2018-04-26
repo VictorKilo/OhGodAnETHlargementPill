@@ -1,0 +1,7 @@
+# Add below arguments to be passed to ohgodethlargementpill binary
+#
+# Older 1080 (maybe others ?) cards use different memory type so if you see
+# no improvement or have stability issue pass --revA 0,2 to use legacy
+# settings for card 0 and 2 (check ids with nvidia-smi command).
+
+ARGS=""

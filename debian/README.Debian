@@ -1,0 +1,23 @@
+ohgodethlargementpill for Debian
+--------------------------------
+
+This (closed source) software hot patch memory timings of NVIDIA cards
+using GDDR5X (1080, 1080Ti, Titan XP, P102, P104) and thus give an
+Ethereum mining boost around +50%.
+
+It may create instabillity or break other usage, so I would not recommend
+using this on a non-dedicated to Ethereum mining machine.
+
+Older 1080 (maybe others ?) cards use different memory type so if you see
+no improvement or have stability issue pass --revA 0,2 to use legacy settings
+for card 0 and 2 (check ids with nvidia-smi command).
+
+This settings can be set in /etc/default/ohgodethlargementpill ARGS variable.
+
+If you are running 4.5+ kernel, you need to enable userland access to
+/dev/mem by passing iomem=relaxed boot kernel option.
+
+Edit /etc/default/grub and add this setting to GRUB_CMDLINE_LINUX_DEFAULT,
+then run update-grub, then reboot.
+
+ -- Adam Cecile <acecile@le-vert.net>  Thu, 26 Apr 2018 19:17:18 +0200
